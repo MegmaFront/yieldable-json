@@ -16,7 +16,6 @@
 
 const pa = require('./yieldable-parser');
 const ps = require('./yieldable-stringify');
-
 /**
  * Checks whether the provided space
  * @param { string or number } space
@@ -67,9 +66,6 @@ module.exports = {
   parseAsync(data, reviver, intensity, callback) {
     const argv = arguments;
 
-    //Bring parity with the in-built parser, that takes both string and buffer
-    if(Buffer.isBuffer(data))
-      data = data.toString();
 
     if (argv.length < 2)
       throw new Error('Missing Callback');
